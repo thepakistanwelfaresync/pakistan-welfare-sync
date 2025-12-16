@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Pakistan Welfare Sync | Modernizing Social Welfare</title>
+    <meta name="description"
+        content="The Pakistan Welfare Sync modernizes social welfare by creating a collaborative, sustainable digital ecosystem across Pakistan.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'forest-green': '#1E5631',
+                        'light-gray': '#F0FFEE',
+                        'teal-accent': '#3ECFBB',
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Anti-Gravity Floating Icons */
+        .floating-icon {
+            position: absolute;
+            opacity: 0.15;
+            pointer-events: none;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            25% {
+                transform: translate(30px, -40px) rotate(90deg);
+            }
+
+            50% {
+                transform: translate(-20px, -80px) rotate(180deg);
+            }
+
+            75% {
+                transform: translate(-40px, -40px) rotate(270deg);
+            }
+        }
+
+        .floating-icon:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            animation-duration: 18s;
+            animation-delay: 0s;
+        }
+
+        .floating-icon:nth-child(2) {
+            top: 60%;
+            left: 15%;
+            animation-duration: 22s;
+            animation-delay: 2s;
+        }
+
+        .floating-icon:nth-child(3) {
+            top: 30%;
+            right: 20%;
+            animation-duration: 20s;
+            animation-delay: 4s;
+        }
+
+        .floating-icon:nth-child(4) {
+            top: 70%;
+            right: 15%;
+            animation-duration: 24s;
+            animation-delay: 1s;
+        }
+
+        .floating-icon:nth-child(5) {
+            top: 45%;
+            left: 50%;
+            animation-duration: 19s;
+            animation-delay: 3s;
+        }
+
+        .floating-icon:nth-child(6) {
+            top: 20%;
+            right: 40%;
+            animation-duration: 21s;
+            animation-delay: 5s;
+        }
+
+        .floating-icon:hover {
+            animation-play-state: paused;
+            opacity: 0.4;
+            transform: scale(1.2);
+            transition: all 0.3s ease;
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, #1E5631 0%, #3ECFBB 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Card hover effects */
+        .tech-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .tech-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(30, 86, 49, 0.2);
+        }
+
+        /* Timeline step animation */
+        .timeline-step {
+            transition: all 0.3s ease;
+        }
+
+        .timeline-step:hover {
+            transform: scale(1.05);
+        }
+
+        /* Button pulse effect */
+        @keyframes pulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(62, 207, 187, 0.7);
+            }
+
+            50% {
+                box-shadow: 0 0 0 15px rgba(62, 207, 187, 0);
+            }
+        }
+
+        .btn-pulse {
+            animation: pulse 2s infinite;
+        }
+
+        /* Premium Scroll Reveal Animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered Delay Classes */
+        .scroll-delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .scroll-delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .scroll-delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        .scroll-delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        .scroll-delay-5 {
+            transition-delay: 0.5s;
+        }
+
+        /* Floating Blur Animation */
+        @keyframes floatBlur {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(10px, -15px) scale(1.1);
+            }
+        }
+
+        @keyframes floatBlurReverse {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(-10px, 15px) scale(1.1);
+            }
+        }
+
+        .floating-blur {
+            animation: floatBlur 6s ease-in-out infinite;
+        }
+
+        .floating-blur-reverse {
+            animation: floatBlurReverse 6s ease-in-out infinite;
+        }
+
+        /* Image Hover Zoom Effect */
+        .image-hover-zoom:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Parallax Container */
+        .parallax-container {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Premium Text Reveal */
+        @keyframes textReveal {
+            from {
+                clip-path: inset(0 100% 0 0);
+            }
+
+            to {
+                clip-path: inset(0 0 0 0);
+            }
+        }
+
+        /* Subtle Glow Effect */
+        @keyframes subtleGlow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(62, 207, 187, 0.2);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(62, 207, 187, 0.4);
+            }
+        }
+
+        .subtle-glow {
+            animation: subtleGlow 3s ease-in-out infinite;
+        }
+
+        /* ========== PREMIUM HIGH-BUDGET EFFECTS ========== */
+
+        /* Animated Gradient Border */
+        .gradient-border {
+            position: relative;
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+        }
+
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            padding: 3px;
+            background: linear-gradient(135deg, #1E5631, #3ECFBB, #1E5631, #3ECFBB);
+            background-size: 300% 300%;
+            border-radius: 24px;
+            -webkit-mask:
+                linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+            mask:
+                linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            animation: gradientMove 4s ease infinite;
+        }
+
+        @keyframes gradientMove {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        /* Glassmorphism Card */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow:
+                0 8px 32px rgba(30, 86, 49, 0.1),
+                0 2px 8px rgba(0, 0, 0, 0.05),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5);
+        }
+
+        /* 3D Tilt Effect */
+        .tilt-3d {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .tilt-3d:hover {
+            transform: rotateY(-5deg) rotateX(5deg) scale(1.02);
+        }
+
+        /* Text Shimmer Effect */
+        .text-shimmer {
+            background: linear-gradient(120deg,
+                    #1E5631 0%,
+                    #3ECFBB 25%,
+                    #1E5631 50%,
+                    #3ECFBB 75%,
+                    #1E5631 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 3s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 200% center;
+            }
+
+            100% {
+                background-position: -200% center;
+            }
+        }
+
+        /* Premium Card Shine Effect */
+        .card-shine {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-shine::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(to right,
+                    transparent 0%,
+                    rgba(255, 255, 255, 0.1) 50%,
+                    transparent 100%);
+            transform: rotate(45deg);
+            animation: cardShine 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes cardShine {
+
+            0%,
+            100% {
+                transform: translateX(-100%) rotate(45deg);
+            }
+
+            50% {
+                transform: translateX(100%) rotate(45deg);
+            }
+        }
+
+        /* Magnetic Hover Effect */
+        .magnetic-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .magnetic-hover:hover {
+            transform: translateY(-8px);
+            box-shadow:
+                0 20px 60px rgba(30, 86, 49, 0.2),
+                0 10px 30px rgba(62, 207, 187, 0.15);
+        }
+
+        /* Floating Orbs Background */
+        .floating-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        @keyframes orbFloat {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            33% {
+                transform: translate(30px, -30px) scale(1.1);
+            }
+
+            66% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+        }
+
+        /* Premium Underline Animation */
+        .underline-animate {
+            position: relative;
+            display: inline-block;
+        }
+
+        .underline-animate::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #1E5631, #3ECFBB);
+            border-radius: 2px;
+            transition: width 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .underline-animate:hover::after,
+        .scroll-reveal.revealed .underline-animate::after {
+            width: 100%;
+        }
+
+        /* Premium Image Frame */
+        .premium-frame {
+            position: relative;
+            padding: 8px;
+            background: linear-gradient(135deg, #1E5631, #3ECFBB);
+            border-radius: 28px;
+            box-shadow:
+                0 25px 80px rgba(30, 86, 49, 0.25),
+                0 10px 30px rgba(62, 207, 187, 0.2);
+        }
+
+        .premium-frame::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(135deg, #3ECFBB, #1E5631, #3ECFBB);
+            border-radius: 30px;
+            z-index: -1;
+            opacity: 0.5;
+            filter: blur(15px);
+            animation: frameGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes frameGlow {
+
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.6;
+                transform: scale(1.02);
+            }
+        }
+
+        .premium-frame-inner {
+            border-radius: 20px;
+            overflow: hidden;
+            background: white;
+        }
+
+        /* Typing Text Effect Classes */
+        .reveal-text {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal-text.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Stagger group animations */
+        .stagger-group .scroll-reveal:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+
+        .stagger-group .scroll-reveal:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+
+        .stagger-group .scroll-reveal:nth-child(3) {
+            transition-delay: 0.3s;
+        }
+
+        .stagger-group .scroll-reveal:nth-child(4) {
+            transition-delay: 0.4s;
+        }
+
+        .stagger-group .scroll-reveal:nth-child(5) {
+            transition-delay: 0.5s;
+        }
+
+        /* Split text reveal */
+        .split-reveal {
+            overflow: hidden;
+        }
+
+        .split-reveal span {
+            display: inline-block;
+            transform: translateY(100%);
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .split-reveal.revealed span {
+            transform: translateY(0);
+        }
+
+        /* Premium Badge */
+        .premium-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: linear-gradient(135deg, rgba(30, 86, 49, 0.1), rgba(62, 207, 187, 0.1));
+            border: 1px solid rgba(30, 86, 49, 0.2);
+            border-radius: 100px;
+            font-weight: 600;
+            color: #1E5631;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Pulsing Icon */
+        .pulse-icon {
+            animation: pulseIcon 2s ease-in-out infinite;
+        }
+
+        @keyframes pulseIcon {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        /* Stats Counter Style */
+        .stat-highlight {
+            font-size: 1.5em;
+            font-weight: 800;
+            background: linear-gradient(135deg, #1E5631, #3ECFBB);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Hover lift for paragraphs */
+        .hover-lift {
+            transition: all 0.3s ease;
+            padding: 16px;
+            margin: -16px;
+            border-radius: 12px;
+        }
+
+        .hover-lift:hover {
+            background: rgba(62, 207, 187, 0.05);
+            transform: translateX(8px);
+        }
+
+        /* Decorative line */
+        .deco-line {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #1E5631, #3ECFBB);
+            border-radius: 2px;
+            margin-bottom: 16px;
+        }
+
+        /* Section divider */
+        .section-divider {
+            height: 100px;
+            background: linear-gradient(180deg, transparent, rgba(30, 86, 49, 0.03));
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800">
+
+    <!-- Hero Section with Anti-Gravity Effect -->
+    <section
+        class="relative bg-gradient-to-br from-forest-green to-teal-accent text-white overflow-hidden min-h-screen flex items-center">
+        <!-- Floating Icons Container -->
+        <div class="absolute inset-0 overflow-hidden">
+            <!-- Map Pin Icon -->
+            <svg class="floating-icon w-20 h-20" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+            </svg>
+
+            <!-- Chart Icon -->
+            <svg class="floating-icon w-20 h-20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" />
+            </svg>
+
+            <!-- Graduation Cap Icon -->
+            <svg class="floating-icon w-20 h-20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" />
+            </svg>
+
+            <!-- Stethoscope Icon -->
+            <svg class="floating-icon w-20 h-20" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                    d="M19 8h-1.5v-.5C17.5 5.57 15.93 4 14 4h-1V2h-2v2h-1c-1.93 0-3.5 1.57-3.5 3.5V8H5c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h1.5v.5c0 2.76 2.24 5 5 5h2c2.76 0 5-2.24 5-5V16H20c1.1 0 2-.9 2-2v-4c0-1.1-.9-2-2-2h-1zm-8 11.5c-1.93 0-3.5-1.57-3.5-3.5V8h7v8c0 1.93-1.57 3.5-3.5 3.5z" />
+            </svg>
+
+            <!-- Leaf Icon -->
+            <svg class="floating-icon w-20 h-20" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                    d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.67-2.02c3.19-1.5 6.61-3.98 10.62-3.98 0 0 5-2 5-10H17z" />
+            </svg>
+
+            <!-- Gear Icon -->
+            <svg class="floating-icon w-20 h-20" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                    d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z" />
+            </svg>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="container mx-auto px-6 py-20 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="mb-8">
+                    <img src="logo.png" alt="The Pakistan Welfare Sync Logo"
+                        class="w-48 h-48 mx-auto mb-6 drop-shadow-2xl">
+                </div>
+                <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
+                    The Pakistan Welfare Sync
+                </h1>
+                <p class="text-xl md:text-3xl font-light mb-4 opacity-90">
+                    Modernizing Social Welfare Through Digital Innovation
+                </p>
+                <p class="text-lg md:text-xl mb-12 max-w-3xl mx-auto opacity-80">
+                    Creating a collaborative, sustainable digital ecosystem across Universities, Hospitals, and Schools
+                    to build a smarter, more connected Pakistan
+                </p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQ3O2r1EtI-R2u5d1JV-8YrjTk3O8Y6G9WfpdXeYGG74ilwA/viewform?usp=sharing&ouid=116517160183572409956"
+                    target="_blank"
+                    class="inline-block bg-teal-accent hover:bg-opacity-90 text-forest-green font-bold text-lg px-12 py-5 rounded-full transition-all duration-300 transform hover:scale-105 btn-pulse shadow-2xl">
+                    Join the Sync
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="animate-bounce"
+            style="position: absolute; bottom: 2.5rem; left: 0; right: 0; display: flex; justify-content: center;">
+            <svg class="w-8 h-8 text-white opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3">
+                </path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Our Aim Section -->
+    <section class="py-20 bg-light-gray">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-black text-forest-green mb-8 text-center">
+                    Our Aim
+                </h2>
+                <div class="bg-white rounded-3xl shadow-xl p-10 md:p-16">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <div class="mb-8">
+                                <h3 class="text-2xl font-bold text-red-600 mb-4 flex items-center">
+                                    <svg class="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                                    </svg>
+                                    From Isolated Acts of Charity
+                                </h3>
+                                <p class="text-gray-600 text-lg">
+                                    Traditional welfare often provides temporary relief without addressing systemic
+                                    challenges or creating lasting change.
+                                </p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-teal-accent mb-4 flex items-center">
+                                    <svg class="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" />
+                                    </svg>
+                                    To Permanent Digital Infrastructure
+                                </h3>
+                                <p class="text-gray-600 text-lg">
+                                    We leave behind sustainable digital solutions—indoor navigation maps, online health
+                                    channels, and data-driven counseling systems—that serve communities for years to
+                                    come.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-12 pt-12 border-t-2 border-gray-200">
+                        <p class="text-xl text-center text-gray-700 font-medium">
+                            Our mission is to <span class="gradient-text font-bold">transform social welfare</span> from
+                            temporary relief to <span class="gradient-text font-bold">permanent, tech-driven
+                                impact</span> that builds a smarter, more connected Pakistan.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About the Founder Section -->
+    <section class="py-24 bg-white overflow-hidden relative" id="founder-section">
+        <!-- Floating Orbs Background -->
+        <div class="floating-orb w-96 h-96 bg-teal-accent top-10 -left-48"
+            style="animation: orbFloat 8s ease-in-out infinite;"></div>
+        <div class="floating-orb w-72 h-72 bg-forest-green bottom-20 -right-36"
+            style="animation: orbFloat 10s ease-in-out infinite reverse;"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-6xl mx-auto">
+                <!-- Section Header -->
+                <div class="text-center mb-20">
+                    <div class="inline-block scroll-reveal">
+                        <span class="premium-badge mb-4">
+                            <svg class="w-4 h-4 pulse-icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                            </svg>
+                            Leadership
+                        </span>
+                    </div>
+                    <h2 class="text-4xl md:text-6xl font-black mb-6 scroll-reveal scroll-delay-1">
+                        <span class="text-shimmer">About the Founder</span>
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto scroll-reveal scroll-delay-2">
+                        Meet the visionary behind The Pakistan Welfare Sync
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <!-- Premium Founder Image -->
+                    <div class="relative scroll-reveal scroll-delay-2">
+                        <div class="premium-frame tilt-3d magnetic-hover">
+                            <div class="premium-frame-inner card-shine">
+                                <img src="founder.png" alt="Immad Mansoor - Founder"
+                                    class="w-full h-auto object-cover transition-transform duration-700 hover:scale-105">
+                            </div>
+                        </div>
+                        <!-- Floating decorative elements -->
+                        <div
+                            class="absolute -bottom-8 -right-8 w-40 h-40 bg-gradient-to-br from-teal-accent to-forest-green rounded-full opacity-20 blur-3xl floating-blur">
+                        </div>
+                        <div
+                            class="absolute -top-8 -left-8 w-40 h-40 bg-gradient-to-br from-forest-green to-teal-accent rounded-full opacity-20 blur-3xl floating-blur-reverse">
+                        </div>
+                    </div>
+
+                    <!-- Founder Bio with Glass Card -->
+                    <div class="space-y-6 stagger-group">
+                        <div class="scroll-reveal">
+                            <div class="deco-line"></div>
+                            <h3 class="text-4xl font-black text-forest-green underline-animate">
+                                Immad Mansoor
+                            </h3>
+                        </div>
+
+                        <div class="scroll-reveal">
+                            <p class="text-teal-accent font-bold text-xl tracking-wide uppercase">
+                                Founder & Visionary Leader
+                            </p>
+                        </div>
+
+                        <div class="glass-card rounded-2xl p-6 scroll-reveal gradient-border magnetic-hover">
+                            <p class="text-lg text-gray-700 leading-relaxed hover-lift">
+                                Immad Mansoor is the Founder of <strong class="text-forest-green">The Pakistan Welfare
+                                    Sync</strong> and a dynamic undergraduate scholar pursuing his BS in Computer
+                                Science at <span class="stat-highlight">Air University</span>. Driven by the belief that
+                                real leadership is measured by the ability to build systems that outlast the work
+                                itself, he established this organization to bridge the gap between advanced technology
+                                and grassroots social welfare.
+                            </p>
+                        </div>
+
+                        <div class="glass-card rounded-2xl p-6 scroll-reveal gradient-border magnetic-hover">
+                            <p class="text-lg text-gray-700 leading-relaxed hover-lift">
+                                With over <span class="stat-highlight">4 years</span> of professional experience in
+                                video editing, graphic design, and digital strategy, Immad brings a unique industry
+                                perspective to the nonprofit sector. His professional background includes working with
+                                multiple international brands such as <strong class="text-forest-green">ICON</strong>.
+                            </p>
+                        </div>
+
+                        <div class="glass-card rounded-2xl p-6 scroll-reveal gradient-border magnetic-hover">
+                            <p class="text-lg text-gray-700 leading-relaxed hover-lift">
+                                On campus, Immad is a recognized student leader, serving as the <strong
+                                    class="text-forest-green">Class Representative (CR)</strong> for two distinct
+                                cohorts and the official <strong class="text-forest-green">Graphic Designer for the
+                                    AUCIS Society</strong> (Air University Computing and Innovation Society). Combining
+                                his technical skillset ranging from C++ programming and prompt engineering to digital
+                                storytelling with a passion for community service, Immad's vision is to move beyond
+                                traditional charity. He aims to create sustainable, data-driven educational and social
+                                support systems that empower the youth and underserved communities of Pakistan.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About the Co-Founder Section -->
+    <section class="py-24 bg-light-gray overflow-hidden relative" id="cofounder-section">
+        <!-- Floating Orbs Background -->
+        <div class="floating-orb w-80 h-80 bg-forest-green top-20 -right-40"
+            style="animation: orbFloat 9s ease-in-out infinite;"></div>
+        <div class="floating-orb w-64 h-64 bg-teal-accent bottom-10 -left-32"
+            style="animation: orbFloat 11s ease-in-out infinite reverse;"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-6xl mx-auto">
+                <!-- Section Header -->
+                <div class="text-center mb-20">
+                    <div class="inline-block scroll-reveal">
+                        <span class="premium-badge mb-4">
+                            <svg class="w-4 h-4 pulse-icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" />
+                            </svg>
+                            Creative Vision
+                        </span>
+                    </div>
+                    <h2 class="text-4xl md:text-6xl font-black mb-6 scroll-reveal scroll-delay-1">
+                        <span class="text-shimmer">About the Co-Founder</span>
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto scroll-reveal scroll-delay-2">
+                        The creative force driving our digital vision forward
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <!-- Co-Founder Bio with Glass Card -->
+                    <div class="space-y-6 stagger-group md:order-1">
+                        <div class="scroll-reveal">
+                            <div class="deco-line"></div>
+                            <h3 class="text-4xl font-black text-forest-green underline-animate">
+                                Tayyab Mansoor
+                            </h3>
+                        </div>
+
+                        <div class="scroll-reveal">
+                            <p class="text-teal-accent font-bold text-xl tracking-wide uppercase">
+                                Co-Founder & Creative Director
+                            </p>
+                        </div>
+
+                        <div class="glass-card rounded-2xl p-6 scroll-reveal gradient-border magnetic-hover">
+                            <p class="text-lg text-gray-700 leading-relaxed hover-lift">
+                                Tayyab Mansoor is a committed and forward-thinking digital creator with over <span
+                                    class="stat-highlight">3 years</span> of experience in video editing, graphic
+                                design, and automation. He has collaborated with influencers and emerging brands,
+                                contributing to content that has generated <span class="stat-highlight">millions of
+                                    impressions</span> across major social platforms.
+                            </p>
+                        </div>
+
+                        <div class="glass-card rounded-2xl p-6 scroll-reveal gradient-border magnetic-hover">
+                            <p class="text-lg text-gray-700 leading-relaxed hover-lift">
+                                Driven by continuous learning and a deep passion for building impactful digital
+                                experiences, Tayyab combines creative vision with strong technical execution. His
+                                ability to streamline workflows, craft compelling visuals, and adapt to new technologies
+                                reflects his dedication to excellence.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Premium Co-Founder Image Placeholder -->
+                    <div class="relative scroll-reveal scroll-delay-2 md:order-2">
+                        <div class="premium-frame tilt-3d magnetic-hover">
+                            <div class="premium-frame-inner card-shine bg-gradient-to-br from-forest-green via-teal-accent to-forest-green flex items-center justify-center"
+                                style="min-height: 450px;">
+                                <div class="text-center text-white p-8">
+                                    <div
+                                        class="w-32 h-32 mx-auto mb-6 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center pulse-icon">
+                                        <svg class="w-16 h-16 opacity-90" fill="currentColor" viewBox="0 0 24 24">
+                                            <path
+                                                d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                        </svg>
+                                    </div>
+                                    <h4 class="text-3xl font-black mb-2">Tayyab Mansoor</h4>
+                                    <p class="text-lg opacity-80 font-medium">Co-Founder & Creative Director</p>
+                                    <div class="mt-6 flex justify-center gap-3">
+                                        <span class="px-4 py-2 bg-white/10 rounded-full text-sm backdrop-blur-sm">Video
+                                            Editing</span>
+                                        <span
+                                            class="px-4 py-2 bg-white/10 rounded-full text-sm backdrop-blur-sm">Graphic
+                                            Design</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Floating decorative elements -->
+                        <div
+                            class="absolute -bottom-8 -left-8 w-40 h-40 bg-gradient-to-br from-teal-accent to-forest-green rounded-full opacity-20 blur-3xl floating-blur">
+                        </div>
+                        <div
+                            class="absolute -top-8 -right-8 w-40 h-40 bg-gradient-to-br from-forest-green to-teal-accent rounded-full opacity-20 blur-3xl floating-blur-reverse">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Tech Initiatives Section -->
+    <section class="py-20 bg-light-gray">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-black text-forest-green mb-6 text-center">
+                    Core Tech Initiatives
+                </h2>
+                <p class="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto">
+                    Tech-Link Welfare: Bridging technology and social impact through innovative digital solutions
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Card 1: Geospatial Mapping -->
+                    <div
+                        class="tech-card bg-gradient-to-br from-white to-light-gray rounded-2xl shadow-lg p-8 border-2 border-forest-green border-opacity-10">
+                        <div
+                            class="w-16 h-16 bg-forest-green rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-forest-green mb-4">
+                            Geospatial Mapping
+                        </h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            Creating custom <strong>Indoor Digital Navigation Layers</strong> for complex buildings
+                            (University and Hospital departments) using Google My Maps to solve navigation problems and
+                            improve accessibility.
+                        </p>
+                    </div>
+
+                    <!-- Card 2: Data-Driven Counseling -->
+                    <div
+                        class="tech-card bg-gradient-to-br from-white to-light-gray rounded-2xl shadow-lg p-8 border-2 border-teal-accent border-opacity-10">
+                        <div
+                            class="w-16 h-16 bg-teal-accent rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-forest-green mb-4">
+                            Data-Driven Counseling
+                        </h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            Collecting <strong>'Real-World Data'</strong> on career trends and visualizing it into
+                            statistical infographics to guide students, replacing guesswork with evidence-based decision
+                            making.
+                        </p>
+                    </div>
+
+                    <!-- Card 3: Digital Media Education -->
+                    <div
+                        class="tech-card bg-gradient-to-br from-white to-light-gray rounded-2xl shadow-lg p-8 border-2 border-forest-green border-opacity-10">
+                        <div
+                            class="w-16 h-16 bg-forest-green rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-forest-green mb-4">
+                            Digital Media Education
+                        </h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            Bridging the digital divide by training non-tech sectors (Medical Students, School Students)
+                            in <strong>video editing and content creation</strong> for social causes and professional
+                            growth.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The 4-Phase Model Section -->
+    <section class="py-20 bg-gradient-to-br from-forest-green to-teal-accent text-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-black mb-6 text-center">
+                    The 4-Phase Operational Model
+                </h2>
+                <p class="text-xl text-center mb-16 opacity-90 max-w-3xl mx-auto">
+                    A systematic, scalable approach to creating sustainable digital infrastructure across Pakistan
+                </p>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Phase 1 -->
+                    <div
+                        class="timeline-step bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl p-8 border-2 border-white border-opacity-20 hover:bg-opacity-20">
+                        <div class="text-6xl font-black mb-4 text-teal-accent">01</div>
+                        <h3 class="text-2xl font-bold mb-3">University</h3>
+                        <p class="text-sm opacity-90 mb-2 font-semibold">Foundation & Mapping</p>
+                        <p class="opacity-80 leading-relaxed">
+                            Establish partnerships with universities, create digital navigation systems, and build the
+                            foundational infrastructure.
+                        </p>
+                    </div>
+
+                    <!-- Phase 2 -->
+                    <div
+                        class="timeline-step bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl p-8 border-2 border-white border-opacity-20 hover:bg-opacity-20">
+                        <div class="text-6xl font-black mb-4 text-teal-accent">02</div>
+                        <h3 class="text-2xl font-bold mb-3">Hospital</h3>
+                        <p class="text-sm opacity-90 mb-2 font-semibold">Medical Wing & Skill Transfer</p>
+                        <p class="opacity-80 leading-relaxed">
+                            Extend mapping to hospitals, train medical students in digital media, and create health
+                            communication channels.
+                        </p>
+                    </div>
+
+                    <!-- Phase 3 -->
+                    <div
+                        class="timeline-step bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl p-8 border-2 border-white border-opacity-20 hover:bg-opacity-20">
+                        <div class="text-6xl font-black mb-4 text-teal-accent">03</div>
+                        <h3 class="text-2xl font-bold mb-3">Educational Outreach</h3>
+                        <p class="text-sm opacity-90 mb-2 font-semibold">Data-Driven Counseling</p>
+                        <p class="opacity-80 leading-relaxed">
+                            Collect career data, create visual analytics, and provide evidence-based guidance to
+                            students across schools.
+                        </p>
+                    </div>
+
+                    <!-- Phase 4 -->
+                    <div
+                        class="timeline-step bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl p-8 border-2 border-white border-opacity-20 hover:bg-opacity-20">
+                        <div class="text-6xl font-black mb-4 text-teal-accent">04</div>
+                        <h3 class="text-2xl font-bold mb-3">Social Welfare</h3>
+                        <p class="text-sm opacity-90 mb-2 font-semibold">Impact Finale & Distribution</p>
+                        <p class="opacity-80 leading-relaxed">
+                            Deploy all digital systems at scale, measure impact, and ensure sustainable operation for
+                            long-term community benefit.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section id="join" class="py-20 bg-light-gray">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl font-black text-forest-green mb-6">
+                    Be Part of the Digital Revolution
+                </h2>
+                <p class="text-xl text-gray-700 mb-12 max-w-2xl mx-auto">
+                    Join us in building permanent digital infrastructure that transforms lives and communities across
+                    Pakistan
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <a href="#contact"
+                        class="bg-forest-green hover:bg-opacity-90 text-white font-bold text-lg px-10 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl">
+                        Get Involved
+                    </a>
+                    <a href="#initiatives"
+                        class="bg-teal-accent hover:bg-opacity-90 text-white font-bold text-lg px-10 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-forest-green text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12 mb-8">
+                <!-- About -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">The Pakistan Welfare Sync</h3>
+                    <p class="opacity-80 leading-relaxed">
+                        Modernizing social welfare through sustainable digital infrastructure that serves communities
+                        for generations.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="opacity-80 hover:opacity-100 transition-opacity">About Us</a></li>
+                        <li><a href="#" class="opacity-80 hover:opacity-100 transition-opacity">Our Initiatives</a></li>
+                        <li><a href="#" class="opacity-80 hover:opacity-100 transition-opacity">4-Phase Model</a></li>
+                        <li><a href="#" class="opacity-80 hover:opacity-100 transition-opacity">Get Involved</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Social -->
+                <div id="contact">
+                    <h4 class="text-xl font-bold mb-4">Connect With Us</h4>
+                    <div class="space-y-3 mb-6">
+                        <p class="opacity-80">
+                            <strong>Email:</strong> thepakistanwelfaresync@gmail.com
+                        </p>
+                        <p class="opacity-80">
+                            <strong>Phone:</strong> +92 XXX XXXXXXX
+                        </p>
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-all">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/thepaksitanwelfaresync" target="_blank"
+                            class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-all">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-all">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-white border-opacity-20 pt-8 text-center">
+                <p class="opacity-80">
+                    &copy; 2025 The Pakistan Welfare Sync. All rights reserved. | Building a Digital Pakistan
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll Reveal & Parallax JavaScript -->
+    <script>
+        // Scroll Reveal Animation using Intersection Observer
+        document.addEventListener('DOMContentLoaded', function () {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all scroll-reveal elements
+            document.querySelectorAll('.scroll-reveal').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Premium 3D Tilt Effect
+            const tiltElements = document.querySelectorAll('.tilt-3d');
+
+            tiltElements.forEach(element => {
+                element.addEventListener('mousemove', (e) => {
+                    const rect = element.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+
+                    const rotateX = (y - centerY) / 20;
+                    const rotateY = (centerX - x) / 20;
+
+                    element.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                });
+
+                element.addEventListener('mouseleave', () => {
+                    element.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+                });
+            });
+
+            // Magnetic Hover Effect for Cards
+            const magneticElements = document.querySelectorAll('.magnetic-hover');
+
+            magneticElements.forEach(element => {
+                element.addEventListener('mousemove', (e) => {
+                    const rect = element.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+
+                    element.style.transform = `translateY(-8px) translate(${x * 0.1}px, ${y * 0.1}px)`;
+                });
+
+                element.addEventListener('mouseleave', () => {
+                    element.style.transform = 'translateY(0) translate(0, 0)';
+                });
+            });
+
+            // Smooth Parallax on Scroll
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+
+                document.querySelectorAll('.floating-orb').forEach((orb, index) => {
+                    const speed = 0.1 + (index * 0.05);
+                    orb.style.transform = `translateY(${scrolled * speed}px)`;
+                });
+            });
+
+            // Text Shimmer Restart on Scroll into View
+            const shimmerElements = document.querySelectorAll('.text-shimmer');
+            const shimmerObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'none';
+                        entry.target.offsetHeight; // Trigger reflow
+                        entry.target.style.animation = 'shimmer 3s linear infinite';
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            shimmerElements.forEach(el => shimmerObserver.observe(el));
+
+            // Premium Underline Animation Trigger
+            const underlineElements = document.querySelectorAll('.underline-animate');
+            const underlineObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            underlineElements.forEach(el => underlineObserver.observe(el));
+
+            // Smooth Counter Animation for Stats
+            const animateValue = (element, start, end, duration) => {
+                const range = end - start;
+                const startTime = performance.now();
+
+                const step = (currentTime) => {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const easeOut = 1 - Math.pow(1 - progress, 3);
+                    const current = Math.floor(start + range * easeOut);
+                    element.textContent = current;
+
+                    if (progress < 1) {
+                        requestAnimationFrame(step);
+                    } else {
+                        element.textContent = end;
+                    }
+                };
+
+                requestAnimationFrame(step);
+            };
+
+            // Gradient Border Animation Speed on Hover
+            const gradientBorders = document.querySelectorAll('.gradient-border');
+            gradientBorders.forEach(element => {
+                element.addEventListener('mouseenter', () => {
+                    element.style.setProperty('--gradient-speed', '2s');
+                });
+                element.addEventListener('mouseleave', () => {
+                    element.style.setProperty('--gradient-speed', '4s');
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
